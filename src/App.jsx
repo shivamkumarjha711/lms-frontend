@@ -1,16 +1,15 @@
-import { Route, Routes } from 'react-router-dom'
-import './App.css'
-import React, { Fragment } from 'react'
-import Footer from './Components/Footer'
+import './App.css';
+import React, { Fragment } from 'react';
+import HomePage from './Pages/HomePage'
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
 
   return (
     <Fragment>
-     {/* <Routes>/*}
-        {/* <Route path='/' element={<Home />}></Route> */}
-      { /*</Routes> */}
-      <Footer />
+     <Routes>
+        <Route path='/' element={<HomePage />}></Route>
+      </Routes>
     </Fragment>
   )
 }
