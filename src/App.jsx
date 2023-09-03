@@ -1,14 +1,15 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import React, { Fragment } from 'react'
+import Footer from './Components/Footer'
 
 function App() {
 
   return (
     <Fragment>
-      <Routes>
+     {/* <Routes>/*}
         {/* <Route path='/' element={<Home />}></Route> */}
-      </Routes>
+      { /*</Routes> */}
     </Fragment>
   )
 }
