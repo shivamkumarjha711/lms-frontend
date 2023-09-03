@@ -1,13 +1,15 @@
-import { useState } from 'react'
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
+import React, { Fragment } from 'react'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      lms fromtend
-    </>
+    <Fragment>
+      <Routes>
+        {/* <Route path='/' element={<Home />}></Route> */}
+      </Routes>
+    </Fragment>
   )
 }
 
