@@ -49,7 +49,7 @@ function Signup() {
 
     async function createNewAccount(event) {
         event.preventDefault();
-        if (!signupData.email || !signupData.password || !signupData.fullName || !signupData.avatar) {
+        if (!signupData.email || !signupData.password || !signupData.fullName) {
             toast.error("Please fill all the details");
             return;
         }
@@ -80,17 +80,17 @@ function Signup() {
 
         // dispatch create account action
         const response = await dispatch(createAccount(formData));
-        console.log(response);
+        // console.log(response);
         if (response?.payload?.success)
             navigate("/"); 
 
-        setSignupData({
-            fullName: "",
-            email: "",
-            password: "",
-            avatar: ""
-        });
-        setPreviewImage("");
+            setSignupData({
+                fullName: "",
+                email: "",
+                password: "",
+                avatar: ""
+            });
+            setPreviewImage("");
     }
 
     return (
