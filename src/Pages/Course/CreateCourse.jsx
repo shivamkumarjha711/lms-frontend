@@ -174,7 +174,7 @@ function CreateCourse() {
                         </div>
                     </main>  
                     
-                    <button type="submit" className="w-full py-1 rounded-sm text-lg font-semibold bg-yellow-600 hover:bg-yellow-500 transition-all ease-in-out duration-300">
+                    <button type="submit" className="w-full py-1 rounded-sm text-lg font-semibold bg-yellow-500 hover:bg-yellow-600 transition-all ease-in-out duration-300">
                         Create Course
                     </button>
                 </form>
