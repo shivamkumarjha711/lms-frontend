@@ -37,7 +37,7 @@ function Checkout() {
                 email: userData.email,
                 name: userData.name
             },
-            handler: async function(response) {
+            handler: async function(response) {     // payment successfull hone ke bad ye function call hoga
                 paymentDetails.razorpay_payment_id = response.razorpay_subscription_id;       // subscription_id not found
                 paymentDetails.razorpay_signature = response.razorpay_signature;
                 paymentDetails.razorpay_subscription_id = response.razorpay_subscription_id;
