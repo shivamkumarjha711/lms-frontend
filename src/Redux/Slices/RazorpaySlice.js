@@ -102,7 +102,7 @@ const razorpaySlice = createSlice({
             toast.success(action?.payload?.message)
             state.isPaymentVarified = action?.payload?.success;
         })
-        .addCase(verifyUserPayment.fulfilled, (state, action) => {
+        .addCase(getPaymentRecord.fulfilled, (state, action) => {
             state.allPayments = action?.payload?.allPayments;
             state.finalMonths = action?.payload?.finalMonths;
             state.monthlySalesRecord = action?.payload?.monthlySalesRecord;
