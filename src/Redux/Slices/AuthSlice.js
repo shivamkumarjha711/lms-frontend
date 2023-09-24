@@ -44,7 +44,7 @@ export const login = createAsyncThunk("/auth/login", async (data) => {
 
 export const logout = createAsyncThunk("/auth/logout", async () => {
     try {
-        const res = axiosInstance.post("user/logout");
+        const res = axiosInstance.get("/user/logout");
         toast.promise(res, {
             loading: "Wait! Logout in Progress...",
             success: (data) => {
@@ -63,7 +63,7 @@ export const updateProfile = createAsyncThunk("/user/update/profile", async (dat
     try {
         // console.log("id:", id);
         // console.log("data:", data);
-        const res = axiosInstance.put(`user/update/${data[0]}`, data[1]);
+        const res = axiosInstance.put(`/user/update/${data[0]}`, data[1]);
         toast.promise(res, {
             loading: "Wait! Profile update in Progress...",
             success: (data) => {
@@ -71,7 +71,6 @@ export const updateProfile = createAsyncThunk("/user/update/profile", async (dat
             },
             error: "Failed to update Profile"
         });
-        
         return (await res).data;
     } catch (error) {
         toast.error(error?.response?.data?.message)
@@ -80,7 +79,7 @@ export const updateProfile = createAsyncThunk("/user/update/profile", async (dat
 
 export const getUserData = createAsyncThunk("/user/details", async () => {
     try {
-        const res = axiosInstance.get("user/me");     
+        const res = axiosInstance.get("/user/me");  
         return (await res).data;
     } catch (error) {
         toast.error(error.message)

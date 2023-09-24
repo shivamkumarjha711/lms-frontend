@@ -55,6 +55,7 @@ function EditProfile() {
         formData.append("avatar", data.avatar)
 
         await dispatch(updateProfile([data.userId, formData]))
+        
 
         await dispatch(getUserData());
 
