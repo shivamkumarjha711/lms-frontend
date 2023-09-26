@@ -34,8 +34,8 @@ function Displaylecture() {
                     Course Name: {state?.title}
                 </div>
 
-                {lectures && lectures.length > 0 && <div className="flex justify-center gap-10 w-full">
-                    {/* left section for playing video and displaying course details to admin */}
+                {lectures && <div className="flex justify-center gap-10 w-full">       
+                    {/* left section for playing video and displaying course details to admin "lectures.length > 0 &&" */}
                     <div className="space-y-5 w-[28rem] p-2 rounded-lg shadow-[0_0_10px_black]">
                         <video 
                             src={lectures && lectures[currentVideo]?.lecture?.secure_id}
@@ -64,7 +64,7 @@ function Displaylecture() {
 
                     {/* right section for displaying list of lectures */}
                     <ul className="w-[28rem] rounded-lg shadow-[0_0_10px_black] space-y-4">
-                        <li className="font-semibold text-xl text-yellow-500 flex items-center justify-between">
+                        <li className="font-semibold text-xl text-yellow-500 flex items-center justify-center gap-48 mt-2">
                             <p>Lectures list</p>
                             {role === "ADMIN" && (
                                 <button onClick={() => navigate("/course/addlecture", {state: {...state}})} className="btn-primary px-2 py-1 rounded-md font-semibold text-sm">
@@ -74,10 +74,10 @@ function Displaylecture() {
                         </li>
                         {lectures && lectures.map((lecture, idx) => {
                             return (
-                                <li className="space-y-2" key={lecture._id}>
+                                <li className="space-y-2 ml-3" key={lecture._id}>
                                     <p className="cursor-pointer" onClick={() => setCurrentVideo(idx)}>
                                         <span>
-                                            {" "} Lecture {idx + 1} : {" "}
+                                            {" "} Lecture {idx + 1} : {lecture.title}
                                         </span>
                                     </p>
                                     {role === "ADMIN" && (

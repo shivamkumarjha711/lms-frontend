@@ -24,12 +24,12 @@ function CreateCourse() {
         const uploadedImage = e.target.files[0];
         if(uploadedImage) {
             const fileReader = new FileReader();
-            fileReader.readAsDataURL(uploadedImage);
+            fileReader.readAsDataURL(uploadedImage);    // immediately photo ko show karne ke liye ye use kiya hai
             fileReader.addEventListener("load", function() {
                 setUserInput({
                     ...userInput,
-                    previewImage: this.result,
-                    thumbnail: uploadedImage
+                    previewImage: this.result,   // for immediadetly show
+                    thumbnail: uploadedImage     // fo  r store this photo in DB
                 })
             })
         }
