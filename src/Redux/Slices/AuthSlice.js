@@ -77,6 +77,21 @@ export const updateProfile = createAsyncThunk("/user/update/profile", async (dat
     }
 })
 
+export const changePassword = createAsyncThunk("/user/change/passowrd", async (data) => {
+    try {
+        const res = axiosInstance.post("/user/change-password", data);
+        toast.promise(res, {
+            loading: "Wait! Changing your password",
+            success: "Change Your password successfuly",
+            error: "Failed to change password"
+        });
+        
+        return (await res).data;
+    } catch (error) {
+        toast.error(error?.response?.data?.message)
+    }
+})
+
 export const getUserData = createAsyncThunk("/user/details", async () => {
     try {
         const res = axiosInstance.get("/user/me");  
